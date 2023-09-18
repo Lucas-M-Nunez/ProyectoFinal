@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #eeeeee;
+}
+.header {
+    background-color: #614BC3;
+    color: #C8FFE0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 40px;
+}
+
+.header__h2 {
+  font-family: "Prata", serif;
+  color: #f7f9f9;
+  font-size: 40px;
+}
+
+header div{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+header img{
+  height: 60px;
+  width: 100px;
+  margin-left: 15px;
+}
+
+header h1{
+  font-family: 'Noto Sans Symbols', sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  background-color: #7c5ffa;
+  margin: 0 auto;
+  -webkit-box-shadow: -9px 11px 17px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: -9px 11px 17px -3px rgba(0,0,0,0.75);
+  box-shadow: -9px 11px 17px -3px rgba(0,0,0,0.75);
+}
+
+.container-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container-input input {
+  width: 250px;
+  height: 25px;
+  border-radius: 15px;
+  padding: 10px 5px;
+}
+
+.container-input label {
+  margin-right: 15px;
+  color: #F7F9F9;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn-form {
+  font-size: 14px;
+  color: #17202a;
+  background-color: #85E6C5;
+  height: 40px;
+  width: 300px;
+  border: 1px solid #229954;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.btn-form:hover {
+  color: #f7f9f9;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #196f3d;
+  transform: scale(1.2);
+}
+
+.container-error {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 15px;
+  color: #f7f9f9;
+  background-color: #ec7063;
+  border-radius: 15px;
+}
+.img-error {
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.img-access {
+  width: 20px;
+  height: 20px;
+}
+
+.inactive {
+  display: none;
+}
+
+.container__loginlink {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  color: #34495e;
+}
+
+.h6__texto {
+  font-size: 13px;
+  font-family: "Prata", serif;
+}
+
+.h6__link {
+  text-decoration: none;
+  color: #34495e;
+  transition: all 0.5s;
+}
+
+.h6__link:hover {
+  color: #176b87;
+  cursor: pointer;
+  font-size: 15px;
+}

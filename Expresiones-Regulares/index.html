@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Metodos02/src/img/code-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="Metodos02/src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+Symbols:wght@300&family=Prata&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+Symbols:wght@300&family=Prata&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Chatbot/animacionesMensajes/animaciones.css">
+    <link rel="stylesheet" href="Chatbot/Contenedor-BoxChat/boxChat.css">
+    <link rel="stylesheet" href="Chatbot/contenedor-input/contenedor-input.css">
+    <link rel="stylesheet" href="Chatbot/logo/logoNav.css">
+    <link rel="stylesheet" href="Chatbot/style.css">
+    <title>Metodos Ejercicios 02</title>
+</head>
+<body>
+    <header>
+            <div>
+                <img class="header__logo" src="Metodos02/src/img/code-solid.svg" alt="log-esc-programación">
+                <h1>Escuela de programacion</h1>
+            </div>
+            <ul>
+                <button class="btn-logOut" id="btn-logOut">Cerrar Sesión</button>
+            </ul>
+    </header>
+    
+    <main>
+
+        <div id="sidebar">
+            <div class="toggle__btn">
+                <img src="src/icons-menu.png" class="burguer-menu" alt="burguer">
+            </div>
+            <h1>Actividades</h1>
+            <ul class="sidebar__lista">
+                <button class="btn-section" id="link-inicio">Inicio</button>
+                <button class="btn-section" id="link-alumnos">Alumnos</button>
+                <button class="btn-section" id="link-peliculas">Películas</button>
+                <button class="btn-section" id="link-chatbot">ChatBot</button>
+            </ul>
+        </div>
+
+        <section id="inicio">
+            <video src="src/videoHome.mp4" id="videoHome" autoplay preload="none" loop ></video>
+            <h1 class="hero__text">Curso de Javascript</h1>
+        </section>
+
+
+        <section id="alumnos" class="inactive">
+            <h1 id="title">Alumnos Escuela de Programacion</h1>
+            <div class ="tableAlumnos">
+                <div id="buttons">
+                    <button class="btn-data" onclick="btnDate()">Datos Alumnos</button>
+                    <button class="btn-data" onclick="btnPromedios()">Promedios</button>
+                    <button class="btn-data" onclick="btnAsistencia()">Asistencias</button>
+                    <button class="btn-data" onclick="btnAprobados()">Aprobados</button>
+                    <button class="btn-data" onclick="btnReprobados()">Reprobados</button>
+                </div>
+                <div class="table">
+                    <table class="demo">
+                        <caption>Alumnos</caption>
+                        <thead>
+                        <tr id="header-table">
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th id="thrid-column">...</th>
+                        </tr>
+                        </thead>
+                        <tbody id="bodyAlumnos">
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </section>
+
+
+        <section id="peliculas" class="inactive">
+            <h1 id="title">Peliculas</h1>
+            <div class ="peliculas">
+                <div id="buttons">
+                    <button class="btn-data" onclick="allFilms()">Todos</button>
+                    <button class="btn-data" onclick="estrenos()">Estrenos</button>
+                    <button class="btn-data" onclick="accion()">Accíon</button>
+                    <button class="btn-data" onclick="drama()">Drama</button>
+                    <button class="btn-data" onclick="crimen()">Crimen</button>
+                    <button class="btn-data" onclick="otros()">Otros</button>
+                </div>
+                <div class="peli">
+
+                </div>
+            </div>
+        </section>
+
+        <section id="chatbot" class="inactive">
+            <h1 id="title">Chat-bot</h1>
+            <div id="container-chatbot">
+                <div class="container" style="max-width: 40rem;" >
+                    <div id="contenedor">
+                    </div>
+                    <div class="scrollbar"></div>
+                    <div id="input">
+                        <input type="text" class="form-control" placeholder="Escribí tu Pregunta" id="valor-input">
+                        <button class="btn btn-outline-success btn-lg" id="btn-send">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="./home/index.js"></script>
+<script src="./Metodos02/src/alumnos.js"></script>
+<script src="./Metodos02/src/peliculas.js"></script>
+<script src="./Metodos02/src/links.js"></script>
+<script src="./Chatbot/main.js"></script>
+</html>
