@@ -51,11 +51,10 @@ const checkMsj = (res) => {
     }
 }
 
-
 const crearRespuestaBot = (respuesta) => {
             // se crea el elemento imagen 
             let img = document.createElement('img');
-            img.src = "./IMG/Logo-official-remove.png";
+            img.src = "./Chatbot/IMG/Logo-official-remove.png";
             img.classList.add('logoChat');
             
             // se crea el elemento contenedor que va a alojar el LOGO y el Mensaje junto con su estilizacion
@@ -78,7 +77,7 @@ const crearRespuestaBot = (respuesta) => {
 
 const defaultRespBot = () => {
             let img = document.createElement('img');
-            img.src = "./IMG/Logo-official-remove.png";
+            img.src = "./Chatbot/IMG/Logo-official-remove.png";
             img.classList.add('logoChat');
 
             let divRespBot = document.createElement('div');

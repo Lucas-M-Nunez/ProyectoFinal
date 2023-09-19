@@ -141,7 +141,11 @@ header ul {
 #inicio video{
     position: fixed;
     z-index: -1;
-    left: 25%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 25%;
+    margin: auto;
     width: 900px;
     -webkit-box-shadow: -14px 13px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -14px 13px 5px 0px rgba(0,0,0,0.75);
@@ -282,7 +286,6 @@ header ul {
     -moz-box-shadow: -5px 8px 10px 4px rgba(0,0,0,0.74);
     box-shadow: -5px 8px 10px 4px rgba(0,0,0,0.74);
 }
-
 
 #container-chatbot{
     margin: 0 30%;
