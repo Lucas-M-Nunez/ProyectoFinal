@@ -4,7 +4,11 @@
 }
 
 body{
-    background-color: #33BBC5;
+    background-color: #273746;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.32'%3E%3Cpolygon fill='%231f1827' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%233f2f4d' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%235e4774' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%237e5e9a' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%239D76C1' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    /* background-color: #33BBC5; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -93,6 +97,7 @@ header ul {
     height: 100%;
     left: -300px;
     transition: all 0.7s;
+    z-index: 1;
 }
 
 #sidebar.active{
@@ -131,7 +136,48 @@ header ul {
 #sidebar .toggle__btn{
     position: absolute;
     left: 300px;
+    border-radius: 0 20px 20px 0;
 }
+
+
+.toggle__btn button{
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    width: 4rem;
+    height: 3.5rem;
+    border: 0;
+    background-color: #504099;
+    border-radius: 0 20px 20px 0;
+    gap: .65rem;
+    margin-top: 10px;
+}
+
+.toggle__btn button:hover{
+    background-color: #614BC3;
+    cursor: pointer;
+}
+.toggle__btn button > div {
+    padding: 1px;
+    background: #F0F3F4;
+    height: 2px;
+    width: 35px;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
+}
+
+.burguer-menu div:first-child{
+    transform: rotate(45deg);
+}
+.burguer-menu div:nth-child(2){
+    opacity: 0;
+}
+
+.burguer-menu div:last-child{
+    transform: rotate(-45deg);
+}
+
 
 #inicio{
     text-align: center;
@@ -165,7 +211,6 @@ header ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #33BBC5;
     width: auto;
     height: auto;
     margin: 10px;
@@ -176,7 +221,6 @@ header ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #33BBC5;
     width: auto;
     height: auto;
     margin: 10px;
@@ -268,6 +312,7 @@ header ul {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
     padding: 25px;
+    text-align: center;
 }
 
 .peli img{

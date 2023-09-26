@@ -1,0 +1,41 @@
+#paginacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #504099;
+    padding: 10px 0 ;
+    box-shadow: -3px 1px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -3px 1px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 1px 19px 0px rgba(0,0,0,0.75);
+}
+
+#paginacion.inactive{
+    display: none;
+}
+
+.btnPaginacion{
+    color: #273746;
+    background-color: #ECF0F1;
+    font-size: 17px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 900;
+    width: 200px;
+    height: 55px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .7s;
+}
+
+.btnPaginacion:hover {
+    color: #ECF0F1;
+    background-color: #614BC3;
+    box-shadow: -8px 3px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -8px 3px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -8px 3px 19px 0px rgba(0,0,0,0.75);
+}
+

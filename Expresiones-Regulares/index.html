@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+Symbols:wght@300&family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans+Symbols:wght@300&family=Prata&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
@@ -19,6 +20,8 @@
     <link rel="stylesheet" href="Chatbot/contenedor-input/contenedor-input.css">
     <link rel="stylesheet" href="Chatbot/logo/logoNav.css">
     <link rel="stylesheet" href="Chatbot/style.css">
+    <link rel="stylesheet" href="ProyectoFinal_API/css/style.css">
+    <link rel="stylesheet" href="ProyectoFinal_API/css/paginacion.css">
     <title>Metodos Ejercicios 02</title>
 </head>
 <body>
@@ -36,7 +39,11 @@
 
         <div id="sidebar">
             <div class="toggle__btn">
-                <img src="src/icons-menu.png" class="burguer-menu" alt="burguer">
+                <button id="burguer-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
             </div>
             <h1>Actividades</h1>
             <ul class="sidebar__lista">
@@ -44,6 +51,7 @@
                 <button class="btn-section" id="link-alumnos">Alumnos</button>
                 <button class="btn-section" id="link-peliculas">Películas</button>
                 <button class="btn-section" id="link-chatbot">ChatBot</button>
+                <button class="btn-section" id="link-PF">Proyecto Final</button>
             </ul>
         </div>
 
@@ -113,6 +121,30 @@
                 </div>
             </div>
         </section>
+
+        <section id="FinalProject" class="inactive">
+            <h1 id="title">Proyecto Final - API The Movies Database</h1>
+            <div class="search">
+                <input type="text" id="search-input" class="search-input" placeholder="Ingrese la pelicula que desea buscar">
+                <button type="submit" id="btnSearch" class="btnSearch"><img src="src/icons8-búsqueda-64.png" alt="Icon-Search">Buscar</button>
+            </div>
+            <div id="buttons">
+                <button class="btn-data" onclick="peliculasEnCartelera()">Cartelera</button>
+                <button class="btn-data" onclick="cargarPeliculasMasPopulares()">Populares</button>
+            </div>
+
+            <h3 id="title">Próximos Estrenos</h3>
+            <div class="card-proximamente carrusel" id="carrusel">
+            </div>
+
+            <div id="container-movies">
+                
+            </div>
+            <div id="paginacion" class="inactive">
+                <button id="btn-Anterior" class="btnPaginacion">Anterior</button>
+                <button id="btn-Siguiente" class="btnPaginacion">Siguiente</button>
+            </div>
+        </section>
     </main>
 </body>
 <script src="./home/index.js"></script>
@@ -120,4 +152,5 @@
 <script src="./Metodos02/src/peliculas.js"></script>
 <script src="./Metodos02/src/links.js"></script>
 <script src="./Chatbot/main.js"></script>
+<script src="./ProyectoFinal_API/js/fetch.js"></script>
 </html>
