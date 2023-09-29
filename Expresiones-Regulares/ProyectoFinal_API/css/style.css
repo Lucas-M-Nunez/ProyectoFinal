@@ -7,6 +7,7 @@
   box-sizing: border-box;
   gap: 50px 30px;
   padding: 40px;
+  margin-bottom: 20px;
 }
 
 .poster {
@@ -122,7 +123,7 @@
   border-radius: 4px;
   display: flex;
   gap: 5px;
-  padding: 4em;
+  padding: 1em;
 }
 
 .card-proximamente p {
@@ -138,14 +139,13 @@
 }
 
 .card-proximamente p:hover {
-  flex: 4;
+  flex: 5;
 }
 
 .card-proximamente p img{
   min-width: 14em;
   padding: .5em;
   text-align: center;
-  transform: rotate(-90deg);
   transition: all .5s;
   text-transform: uppercase;
   color: #ff568e;

@@ -55,10 +55,6 @@ const Proximamente = async() => {
     }
 }
 
-
-
-
-
 // Lista de Peliculas Populares en el boton 'Populares';
 const cargarPeliculasMasPopulares = async() => {
     try{
@@ -107,7 +103,7 @@ const peliculasEnCartelera = async() => {
                 peliculas += `
                 <div class="card">
                     <img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
-                    <button class="card-button">More info</button>
+                    <button class="card-button" id="card-button">More info</button>
                     <h1 class="titulo__pelicula">${pelicula.title}</h1>
                 </div>
                 `;
