@@ -117,41 +117,44 @@
 }
 
 
-
-.card-proximamente {
-  height: 354px;
-  border-radius: 4px;
-  display: flex;
-  gap: 5px;
-  padding: 1em;
-}
-
-.card-proximamente p {
-  height: 100%;
-  flex: 1;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: all .5s;
+#galeria-wrap{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card-proximamente p:hover {
-  flex: 5;
+#carrusel{
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }
 
-.card-proximamente p img{
-  min-width: 14em;
-  padding: .5em;
-  text-align: center;
-  transition: all .5s;
-  text-transform: uppercase;
-  color: #ff568e;
-  letter-spacing: .1em;
+#carrusel p{
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
 }
 
-.card-proximamente p:hover img{
-  transform: rotate(0);
+#carrusel p img{
+    height: 450px;
+    width: 300px;
+    filter: grayscale(100%);
+    transition: transform .5s;
 }
+
+#carrusel p img:hover{
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#carrusel::-webkit-scrollbar{
+    display: none;
+}
+
+.flecha-izq, .flecha-der{
+  cursor: pointer;
+  margin: 0 25px;
+}
+

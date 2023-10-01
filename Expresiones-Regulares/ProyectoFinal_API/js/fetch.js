@@ -112,12 +112,14 @@ const Proximamente = async() => {
         if (respuesta.status === 200) {
             const data = await respuesta.json();
 
+
+
             let peliculas = '';
 
             //diseñar carrusel =>
             data.results.forEach(pelicula => {
                 peliculas += `
-                    <p><img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></p>
+                    <p><img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" onclick="MostrarTarjeta(${pelicula.id})"></p>
                 `;
             });
             document.getElementById('carrusel').innerHTML = peliculas;
