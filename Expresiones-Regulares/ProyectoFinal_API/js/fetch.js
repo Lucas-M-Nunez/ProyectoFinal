@@ -2,6 +2,82 @@
 // la pagina predeterminada siempre va a ser la 1.
 let pagina = 1;
 
+// const btnTarjeta = document.getElementById('card-button');
+// const cross = document.getElementById('container-cross');
+
+// btnTarjeta.addEventListener('click', (id) => {
+//         document.getElementById('container-tarjeta').classList.remove('inactive');
+//         tarjeta.classList.add('scale-up-center');
+//         masInfoTarjeta(id);
+// });
+
+// cross.addEventListener('click', () => {
+//         document.getElementById('tarjeta').classList.remove('scale-up-center');
+//         document.getElementById('container-tarjeta').classList.add('inactive');
+// })
+
+function MostrarTarjeta(id) {
+        document.getElementById('container-tarjeta').classList.remove('inactive');
+        masInfoTarjeta(id);
+}
+
+function CerrarTarjeta() {
+        document.getElementById('container-tarjeta').classList.add('inactive');
+}
+
+
+const cross = document.getElementById('container-cross');
+const masInfoTarjeta = async(movieID) => {
+    try {
+        const respuesta = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=9c0180dfe7e273d27958b52d5512374b&language=es-AR`);
+
+        // Validaciones segun el status de la respuesta segun sea codigo 200, 401 o 404.
+        if (respuesta.status === 200) {
+            const data = await respuesta.json();
+
+            let generos = '';
+
+            data.genres.forEach(genero => { 
+                generos += `<h4>${genero.name}</h4>`
+            });
+
+            let pelicula = `
+                <div id="tarjeta">
+                <a href="https://image.tmdb.org/t/p/w500/${data.backdrop_path}" target="_blank"><img class="Poster-Peli" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="Poster Pelicula"></a>
+                <div class="tarjeta__info">
+                    <div class="container-cross" id="container-cross">
+                        <div class="cross" onclick="CerrarTarjeta()"></div>
+                    </div>
+                    <h1 class="tarjeta__title">- ${data.title} - ${data.tagline}</h1>
+                    <div class="details">
+                        <div class="div-generos">
+                            ${generos}
+                        </div>
+                        <p class="p-idiomas">Idioma: ${data.original_language}</p>
+                        <p class="p-adult">Clasificacion para adultos: ${data.adult}</p>
+                        <p class="p-trama">${data.overview}</p>
+                        <div class="estreno">
+                            <h3 class="estreno__title">Presupuesto: $${data.budget}</h3>
+                            <h3 class="estreno__title">Ingresos: $${data.revenue}</h3>
+                            <h3 class="estreno__title">Fecha de Estreno: ${data.release_date}</h3>
+                            <h3 class="puntuacion__title">Popularidad: ${data.popularity}</h3>
+                            <div class="homepage">HomePage: ${data.homepage}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                `;
+            document.getElementById('container-tarjeta').innerHTML = pelicula;
+        } else if(respuesta.status === 401) {
+            console.log(` Error ${respuesta.status}, KEY_API incorrecta o mal escrita`);
+        } else if(respuesta.status === 404) {
+            console.log(`Error ${respuesta.status}, La pelicula que seleccionada no existe`);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+} 
+
 
 
 // pasamos a realizar el recorrido de las paginas que nos da la API, hasta donde pude ver el maximo = 500.
@@ -70,7 +146,7 @@ const cargarPeliculasMasPopulares = async() => {
                 peliculas += `
                 <div class="card">
                     <img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
-                    <button class="card-button">More info</button>
+                    <button class="card-button" id="card-button" onclick="MostrarTarjeta(${pelicula.id})">More info</button>
                     <h1 class="titulo__pelicula">${pelicula.title}</h1>
                 </div>
                 `;
@@ -87,9 +163,10 @@ const cargarPeliculasMasPopulares = async() => {
     }
 }
 
+
+
 // Lista de Peliculas en Cartelera con el Boton de 'Cartelera';
 const peliculasEnCartelera = async() => {
-
     try {
         const respuesta = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=9c0180dfe7e273d27958b52d5512374b&language=es-AR&page=${pagina}`);
 
@@ -103,7 +180,7 @@ const peliculasEnCartelera = async() => {
                 peliculas += `
                 <div class="card">
                     <img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
-                    <button class="card-button" id="card-button">More info</button>
+                    <button class="card-button" id="card-button" onclick="MostrarTarjeta(${pelicula.id})">More info</button>
                     <h1 class="titulo__pelicula">${pelicula.title}</h1>
                 </div>
                 `;
@@ -138,7 +215,7 @@ const buscarPeliculaPorTitulo = async() => {
                     peliculas += `
                         <div class="card">
                             <img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
-                            <button class="card-button">More info</button>
+                            <button class="card-button" id="card-button" onclick="MostrarTarjeta(${pelicula.id})">More info</button>
                             <h1 class="titulo__pelicula">${pelicula.title}</h1>
                         </div>
                     `;                
@@ -171,7 +248,7 @@ const buscarPelisPorTituloEnter = async(e) => {
                         peliculas += `
                             <div class="card">
                                 <img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
-                                <button class="card-button">More info</button>
+                                <button class="card-button" id="card-button" onclick="MostrarTarjeta(${pelicula.id})">More info</button>
                                 <h1 class="titulo__pelicula">${pelicula.title}</h1>
                             </div>
                         `;                

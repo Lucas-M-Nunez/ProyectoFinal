@@ -1,14 +1,15 @@
-const btn = document.getElementById('card-button');
-const cross = document.getElementById('container-cross');
-const tarjeta = document.getElementById('tarjeta');
+function MostrarTarjeta() {
+    const btnTarjeta = document.getElementById('card-button');
+    btnTarjeta.addEventListener('click',() => {
+        document.getElementById('container-tarjeta').classList.remove('inactive');
+        tarjeta.classList.add('scale-up-center');
+    });
+}
 
-btn.addEventListener('click',() => {
-    document.getElementById('container-tarjeta').classList.remove('inactive');
-    tarjeta.classList.add('scale-up-center');
-});
-
-cross.addEventListener('click', () => {
-    tarjeta.classList.remove('scale-up-center');
-    document.getElementById('container-tarjeta').classList.add('inactive');
-})
-
+function CerrarTarjeta() {
+    const cross = document.getElementById('container-cross');
+    cross.addEventListener('click', () => {
+        document.getElementById('tarjeta').classList.remove('scale-up-center');
+        document.getElementById('container-tarjeta').classList.add('inactive');
+    });
+}
