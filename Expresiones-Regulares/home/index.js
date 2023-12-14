@@ -24,4 +24,26 @@ const btnSidebar = document.querySelector('.toggle__btn');
 
 btnSidebar.addEventListener('click', () => {
     document.getElementById('sidebar').classList.toggle('active');
+});
+
+// Configuracion de la libreria de tipeado:
+
+console.log();
+
+
+const typed = new Typed('.typed', {
+    strings: [
+        `<i class="i">${user.usuario}</i>`
+    ],
+    typedSpeed: 105,
+    startDelay: 300,
+    backSpeed: 105,
+    smartBackspace: true,
+    shuffle: false,
+    backDelay: 1500,
+    loop: true,
+    loopCount: false,
+    showCursor: true,
+    cursorChar: '|',
+    contentType: 'html',
 })

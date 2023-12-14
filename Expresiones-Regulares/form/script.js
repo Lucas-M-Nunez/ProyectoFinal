@@ -1,3 +1,44 @@
+
+window.addEventListener('load', (e) => {
+  // Cuenta Admin predeterminada para acceder a la pagina sin necesidad de registrarse.  
+  e.preventDefault();
+  let usuario = document.getElementById("usuario").value;
+  let nombre = document.getElementById("nombre").value;
+  let apellido = document.getElementById("apellido").value;
+  let email = document.getElementById("email").value;
+  let telefono = document.getElementById("telefono").value;
+  let password = document.getElementById("password").value;
+
+  usuario = 'SuperAdmin';
+  nombre = 'admin2023';
+  apellido = 'admin';
+  email = 'admin2023@admin.com';
+  telefono = '+54 9 26123456789';
+  password = 'superadmin2023';
+
+  // Creamos una constante 'users' para que, en el caso
+  // que se encuentren usuarios registrados los va a guardar
+  // en la constante users, si no tiene ninguno , simplemente
+  // va a tener un array vacío.
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // creamos una constante y usamos el metodo find para buscar el
+  // correo ingresado, si el correo ya se encuentra en la base de datos
+  // dira que el email ya esta registrado, si no, se procede a crear
+  // la cuenta.
+  const usersRegistrado = users.find((user) => user.email === email);
+  
+  if (!usersRegistrado) {
+      //pusheamos los valores de los imputs como un nuevo objeto a 'users'
+      // y lo transformamos en JSON para guardarlo en el localStorage.
+      users.push({usuario: usuario, nombre: nombre, apellido: apellido, telefono: telefono, password: password, email: email});
+      localStorage.setItem('users', JSON.stringify(users));
+  }
+
+})
+
+
 const formulario = document.querySelectorAll("form input");
 const form = document.querySelector("form");
 

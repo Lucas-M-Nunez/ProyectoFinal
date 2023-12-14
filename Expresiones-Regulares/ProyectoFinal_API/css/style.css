@@ -126,6 +126,7 @@
 #carrusel{
   display: flex;
   overflow: scroll;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
 
