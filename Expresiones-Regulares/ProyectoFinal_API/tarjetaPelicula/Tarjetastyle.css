@@ -78,6 +78,9 @@
     font-size: 30px;
     margin: 5px 5px;
     font-weight: 800;
+    background-color: #BB8FCE;
+    text-transform: uppercase;
+    border-radius: 10px;
 }
 
 
